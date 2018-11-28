@@ -8,13 +8,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "build": "webpack -w",
     "seed": "node database/seed.js",
     "schema": "mysql -u root --local-infile < database/schema.sql",
     "test": "jest --coverage --",
     "postgres:seed": "node database/seed.js",
-    "mongodb:seed": "node mongoSeed.js",
+    "mongodb:seed": "node database/mongoSeed.js",
     "postgres:init": "createdb whatslunch && psql whatslunch < database/schema.sql",
     "mongodb:init": "mongoimport --host 3.16.169.184 --username brian --password banana -d whats_lunch -c restaurant_reviews --file database/mongoReview.json"
   },

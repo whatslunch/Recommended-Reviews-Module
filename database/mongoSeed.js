@@ -15,7 +15,7 @@ function write() {
     let fakeDate = faker.date.past();
     fakeDate = JSON.stringify(fakeDate).slice(1, 11);
     const name = faker.company.companyName();
-    const reviewNum = randomInt(10);
+    const reviewNum = randomInt(9);
     const restaurantReviews = {};
     restaurantReviews.id = i;
     restaurantReviews.restaurant_name = name;
@@ -28,7 +28,7 @@ function write() {
       newReview.location = `${faker.address.city()} ${faker.address.state()}`;
       newReview.date = moment(fakeDate).format('YYYY-MM-DD');
       newReview.score = `https://s3-us-west-1.amazonaws.com/pley-food/star_${randomInt(9)}.png`;
-      newReview.food_image = `https://s3-us-west-1.amazonaws.com/yump-sf-images/${sprintf('%05s.jpg', randomInt(499))}`;
+      newReview.food_image = `https://s3-us-west-2.amazonaws.com/yump-sf-images/${sprintf('%05s.jpg', randomInt(499))}`;
       restaurantReviews.reviews.push(newReview);
     }
 
