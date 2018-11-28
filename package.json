@@ -16,7 +16,7 @@
     "postgres:seed": "node database/seed.js",
     "mongodb:seed": "node mongoSeed.js",
     "postgres:init": "createdb whatslunch && psql whatslunch < database/schema.sql",
-    "mongodb:init": "mongoimport -d whats_lunch -c restaurant_reviews --file database/mongoReview.json"
+    "mongodb:init": "mongoimport --host 3.16.169.184 --username brian --password banana -d whats_lunch -c restaurant_reviews --file database/mongoReview.json"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",

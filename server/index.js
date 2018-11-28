@@ -33,7 +33,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // send to dist folder where client is being render when a GET request is sent to '/'
 app.use(express.static(path.join(__dirname, '../public/dist')));
 
-app.get('/api/:id/', (req, res) => {
+app.get('/:id', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/dist/index.html'));
+});
+
+app.get('/api/:id', (req, res) => {
   db.retrieve(req.params.id, (err, data) => {
     if (err) {
       res.status(500).send(err);

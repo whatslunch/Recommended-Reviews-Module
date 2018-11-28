@@ -1,6 +1,7 @@
 const faker = require('faker');
 const fs = require('fs');
 const moment = require('moment');
+const { sprintf } = require('sprintf-js');
 
 const randomInt = max => Math.floor(Math.random() * max + 1);
 
@@ -14,7 +15,7 @@ function write() {
     let fakeDate = faker.date.past();
     fakeDate = JSON.stringify(fakeDate).slice(1, 11);
     const name = faker.company.companyName();
-    const reviewNum = randomInt(14);
+    const reviewNum = randomInt(10);
     const restaurantReviews = {};
     restaurantReviews.id = i;
     restaurantReviews.restaurant_name = name;
@@ -22,13 +23,12 @@ function write() {
 
     for (let j = 0; j < reviewNum; j += 1) {
       const newReview = {};
-      // newReview.review_id = j;
       newReview.user_name = faker.name.findName();
       newReview.user_avatar = faker.image.avatar();
       newReview.location = `${faker.address.city()} ${faker.address.state()}`;
       newReview.date = moment(fakeDate).format('YYYY-MM-DD');
-      newReview.score = randomInt(10);
-      newReview.food_image = `https://s3-us-west-1.amazonaws.com/yump-sf-images/${randomInt(499)}.jpg`;
+      newReview.score = `https://s3-us-west-1.amazonaws.com/pley-food/star_${randomInt(9)}.png`;
+      newReview.food_image = `https://s3-us-west-1.amazonaws.com/yump-sf-images/${sprintf('%05s.jpg', randomInt(499))}`;
       restaurantReviews.reviews.push(newReview);
     }
 

@@ -53,9 +53,9 @@ npm install
 ```
 ## Endpoints
 
-| Action        | Method        | Endpoint                      | Purpose              |
-| ------------- | ------------- | ----------------------------- | -------------------- |
-| Create        | POST          | /restaurants/:name            | Insert new name      |
-| Read(one)     | GET           | /restaurant/:restaurant_id    | Get one row          |
-| Update        | PUT           | /api/:restaurant_id/          | Update one row       |
-| Delete        | DELETE        | /api/:restaurant_id/          | Delete one row       |
+| Action        | Method        | Endpoint              | Purpose              |
+| ------------- | ------------- | --------------------- | -------------------- |
+| Create        | POST          | /api/:name            | Insert new name      |
+| Read(one)     | GET           | /api/:id              | Get one row          |
+| Update        | PUT           | /api/:id              | Update one row       |
+| Delete        | DELETE        | /api/:id              | Delete one row       |
