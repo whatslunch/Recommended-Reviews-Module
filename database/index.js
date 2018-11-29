@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/whats_lunch');
+mongoose.connect('mongodb://ec2-18-222-251-159.us-east-2.compute.amazonaws.com/whats_lunch');
 
 const restaurantSchema = mongoose.Schema({
   id: Number,

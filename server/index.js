@@ -34,6 +34,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public/dist')));
 
 app.get('/:id', (req, res) => {
+  res.sendFile(path.join(__dirname, '/loaderio-558be3a615b6b2fff3bfbfff89d6335d/'));
+});
+
+app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/dist/index.html'));
 });
 
