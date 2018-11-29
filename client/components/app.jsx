@@ -33,7 +33,7 @@ class App extends React.Component {
   }
 
   fetchReviews(id) {
-    $.ajax(`http://localhost:3001/api/${id}`, {
+    $.ajax(`api/${id}`, {
       success: (reviews) => {
         const wrappedReviews = reviews[0].reviews.map(restaurant => {
           return {
