@@ -107,7 +107,7 @@ const User = ({ restaurant }) => (
             <img src={restaurant.review.score}/> <span className="date">{moment(restaurant.review.date).format('L')}</span>
           </div>
           <p className="users_comment">{restaurant.review.review_comment}</p>
-          <p><img className="food_picture" src={restaurant.review.picture_food}/></p>
+          <p><img className="food_picture" src={restaurant.review.food_image}/></p>
         </div>
       </div>
     </div>

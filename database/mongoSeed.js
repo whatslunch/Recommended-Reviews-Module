@@ -5,7 +5,7 @@ const { sprintf } = require('sprintf-js');
 
 const randomInt = max => Math.floor(Math.random() * max + 1);
 
-const stream = fs.createWriteStream('./database/mongoReview.json');
+const stream = fs.createWriteStream('./database/mongoReview2.json');
 
 let i = 0;
 
@@ -35,7 +35,7 @@ function write() {
     if (!stream.write(`${JSON.stringify(restaurantReviews)}\n`)) {
       return;
     }
-    if (i % 1000) {
+    if (i % 100) {
       console.log(`${(i / 10000000 * 100).toFixed(2)} %`);
       console.clear();
     }
