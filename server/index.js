@@ -33,8 +33,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // send to dist folder where client is being render when a GET request is sent to '/'
 app.use(express.static(path.join(__dirname, '../public/dist')));
 
-app.get('/:id', (req, res) => {
-  res.sendFile(path.join(__dirname, '/loaderio-558be3a615b6b2fff3bfbfff89d6335d/'));
+app.get('/loaderio-558be3a615b6b2fff3bfbfff89d6335d/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/loaderio-558be3a615b6b2fff3bfbfff89d6335d.txt'));
 });
 
 app.get('/:id', (req, res) => {
